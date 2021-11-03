@@ -11,7 +11,7 @@ Accede al siguiente link para ver la documentación en Español
 
 https://devcognitio.github.io/documentation_automation_devco_library/
 
-_To read the documentation in Englsih, please clik here_
+_To read the documentation in Englsih, please click here_
 
 https://devcognitio.github.io/documentation_automation_devco_library/index_english.html
 
