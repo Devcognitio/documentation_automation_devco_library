@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+  <link href="assets/images/favicon.png" rel="icon" />
+  <title>Devco | Automation Library</title>
+  <meta name="description" content="Automation Devco Library para SerenityBDD usando Screenplay">
+
+  <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css" />
+  <link rel="stylesheet" type="text/css" href="assets/vendor/magnific-popup/magnific-popup.min.css" />
+  <link rel="stylesheet" type="text/css" href="assets/vendor/highlight.js/styles/github.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css" />
+</head>
+
+<body data-spy="scroll" data-target=".idocs-navigation" data-offset="125">
+
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="lds-ellipsis">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <!-- Preloader End -->
+
+  <!-- Document Wrapper   
+=============================== -->
+  <div id="main-wrapper">
+
+    <!-- Header
+  ============================ -->
+    <header id="header" class="sticky-top">
+      <!-- Navbar -->
+      <nav class="primary-menu navbar navbar-expand-lg bg-dark navbar-text-light navbar-dropdown-dark border-0">
+        <div class="container-fluid">
+          <!-- Sidebar Toggler -->
+          <button id="sidebarCollapse" class="navbar-toggler d-block d-md-none" type="button"><span></span><span
+              class="w-75"></span><span></span></button>
+
+          <!-- Logo -->
+          <a class="logo ml-md-3" href="index.html" title="Devco Library Template"> <img
+              src="assets/images/logo_devco_library.png" alt="Devco Template" /> </a>
+          <span class="text-2 text-light ml-2">v2.0.2</span>
+          <!-- Logo End -->
+
+          <!-- Navbar Toggler -->
+          <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
+            data-target="#header-nav"><span></span><span></span><span></span></button>
+
+          <a class="btn btn-outline-success my-4" target="_blank" href="index_english.html">Read in English</a>
+
+
+        </div>
+      </nav>
+      <!-- Navbar End -->
+    </header>
+    <!-- Header End -->
+
+    <!-- Content
+  ============================ -->
+    <div id="content" role="main">
+
+      <!-- Sidebar Navigation
+	============================ -->
+      <div class="idocs-navigation bg-light">
+        <ul class="nav flex-column ">
+
+          <li class="nav-item"><a class="nav-link active" href="#overview_section">1. Visión General</a>
+            <ul class="nav flex-column">
+              <li class="nav-item"><a class="nav-link" href="#introduction_section">Introducción</a></li>
+              <li class="nav-item"><a class="nav-link" href="#motivation_section">Motivación</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link active" href="#getting_section">2. Comenzar</a>
+            <ul class="nav flex-column">
+              <li class="nav-item"><a class="nav-link" href="#setup_section">Configuración</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="#locator_strategy_section">3. Estrategia para Locators en Móviles</a></li>
+
+
+          <li class="nav-item"><a class="nav-link" href="#mobile_section">4. Móviles</a>
+            <ul class="nav flex-column">
+              <li class="nav-item"><a class="nav-link" href="#actions_section">Acciones</a>
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link" href="#drag_element_section">Arrastrar Elemento</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#scroll_section">Scroll</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#abilities_mobile_section">Habilidades</a>
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link" href="#change_driver_section">Cambiar Contexto del Driver</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#choose_app_section">Elegir una App desde Segundo Plano</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#run_app_section">Ejecutar una App en Segundo Plano</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#hide_key_section">Ocultar el Teclado</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+
+          <li class="nav-item"><a class="nav-link" href="#web_section">5. Web</a>
+            <ul class="nav flex-column">
+              <li class="nav-item"><a class="nav-link" href="#abilities_web_section">Habilidades</a>
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link" href="#change_tab_section">Cambiar de Pestaña</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#open_new_tab_section">Abrir Nueva Pestaña</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+
+          <li class="nav-item"><a class="nav-link active" href="#wait_section">6. Esperas</a>
+            <ul class="nav flex-column">
+              <li class="nav-item"><a class="nav-link" href="#stand_by_section">Tiempo de Espera</a></li>
+            </ul>
+          </li>
+
+
+          <li class="nav-item"><a class="nav-link active" href="#utilities_section">7. Utilidades</a>
+            <ul class="nav flex-column">
+              <li class="nav-item"><a class="nav-link" href="#read_csv_section">Leer Data desde CSV</a></li>
+              <li class="nav-item"><a class="nav-link" href="#read_pdf_section">Administrador PDF</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="#changelog_section">8. Registro de Cambios</a>
+            <ul class="nav flex-column">
+              <li class="nav-item"><a class="nav-link" href="#v2-0-2">v2.0.2</a></li>
+              <li class="nav-item"><a class="nav-link" href="#v2-0-1">v2.0.1</a></li>
+              <li class="nav-item"><a class="nav-link" href="#v2-0-0">v2.0.0</a></li>
+              <li class="nav-item"><a class="nav-link" href="#v1-3-9">v1.3.9</a></li>
+              <li class="nav-item"><a class="nav-link" href="#v1-3-8">v1.3.8</a></li>
+              <li class="nav-item"><a class="nav-link" href="#v1-3-7">v1.3.7</a></li>
+              <li class="nav-item"><a class="nav-link" href="#v1-3-6">v1.3.6</a></li>
+              <li class="nav-item"><a class="nav-link" href="#v1-3-5">v1.3.5</a></li>
+              <li class="nav-item"><a class="nav-link" href="#v1-3-4">v1.3.4</a></li>
+              <li class="nav-item"><a class="nav-link" href="#v1-3-2">v1.3.2</a></li>
+              <li class="nav-item"><a class="nav-link" href="#v1-3-1">v1.3.1</a></li>
+              <li class="nav-item"><a class="nav-link" href="#v1-3-0">v1.3.0</a></li>
+              <li class="nav-item"><a class="nav-link" href="#v1-2-0">v1.2.0</a></li>
+              <li class="nav-item"><a class="nav-link" href="#v1-1-0">v1.1.0</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link active" href="#contributors_section">9. Colaboradores</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Docs Content -->
+      <div class="idocs-content">
+        <div class="container">
+
+          <!-- Overview -->
+          <section id="overview_section">
+            <h1>Documentación Libreria Automatización Devco</h1>
+            <h2>1. Visión General</h2>
+            <p class="lead">Muchas gracias por visitar este espacio y usar nuestra libreria.</p>
+            <hr>
+            <div class="row">
+              <div class="col-sm-6 col-lg-4">
+                <ul class="list-unstyled">
+                  <li><strong>Version:</strong> 2.0.2</li>
+                  <li><strong>Propietario:</strong> <a href="http://www.devco.com.co" target="_blank">Devco</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-sm-6 col-lg-4">
+                <ul class="list-unstyled">
+                  <li><strong class="font-weight-700">Creado:</strong> 23 Julio, 2019</li>
+                  <li><strong>Actualizado:</strong> 30 Julio, 2021</li>
+                </ul>
+              </div>
+            </div>
+            <p class="alert alert-info">Si tienes alguna pregunta que no este dentro del alcance de esta documentación, Por favor escribenos vía correo electrónico. <a target="_blank"
+                href="https://www.devco.com.co">Sección Contactanos</a>.</p>
+          </section>
+
+          <hr class="divider">
+
+          <!-- Introduction -->
+          <section id="introduction_section">
+            <h3>Introducción</h3>
+
+            <p>
+              El propósito de esta libreria es servirte de ayuda en tu automatización si estas usando el framework de Serenity BDD y Screenplay como patrón de diseño para automatización ya sea para web o móvil. 
+              <br>
+              Puedes leer más acerca de estas tecnologias en los siguientes links:
+            </p>
+
+              <ul>
+                <li> <a href="https://serenity-bdd.github.io/theserenitybook/latest/index.html" target="_blank">SerenityBDD</a></li>
+                <li> <a href="http://serenity-bdd.info/docs/articles/screenplay-tutorial.html" target="_blank">Screenplay Pattern</a></li>
+              </ul>
+          </section>
+          
+          <hr class="divider">
+
+          <!-- Motivation -->
+          <section id="motivation_section">
+            <h3>Motivation</h3>
+            <p class="lead">¿Quien no ha soñado con tener superpoderes? </p>
+            <p>
+              Sabemos que no tenemos la posibilidad de darte fuerza extra, de volar o hacerte invisible.
+               pero algo que si podemos hacer es darte superpoderes para tu código de automatización.
+              <br>
+              Asi es. ¿Cuántas veces te ha pasado que cada vez que creas un proyecto de automatización web o móvil, terminas desarrollando nuevas funcionalidades para tus actores? Serenity BDD con Screenplay es una poderosa herramienta que permite desarrollar pruebas altamente legibles y reutilizables. Pero a veces, necesitamos un poco más de habilidades o acciones para hacer que nuestras pruebas se ajusten mucho más flujo que tiene el actor  a través de la aplicación.  <strong>En Devco te damos superpoderes </strong>, por lo que hemos desarrollado una libreria que, bien utilizada con Screenplay, hará que cualquier usuario sea invencible en este viaje, ademas puedes usarla en suites de prueba únicas / multiplataforma. Impresionante, ¿No? Así que basta de hablar de negocios. Manos a la obra!.
+            </p>
+          </section>
+
+          <hr class="divider">
+  
+          <!-- Getting Started
+		============================ -->
+    <section id="getting_section">
+      <h2>2. Empezar</h2>
+
+      <p>
+        Nuestra libreria esta publicada en el repositorio de Maven. Aqui esta el link oficial
+      </p>
+
+      <a href="https://mvnrepository.com/artifact/co.com.devco.automation/automationDevcoLibrary" target="_blank">Maven Repository - Automation Devco Library</a>
+      
+
+      <hr class="divider">
+
+          <!-- Setup
+		============================ -->
+          <section id="setup_section">
+            <h3>Configuración</h3>
+              <p>
+                Esta libreria usa lenguaje Java como base, normalmente usamos herramientas de automatización de tareas como Maven o Gradle 
+                para adicionar nuestra dependencia a un proyecto.
+                <br>
+                Si estas usando Gradle, de esta forma puedes importar nuestra libreria
+              </p>
+                
+              <pre>
+                <code class="groovy">
+                    dependencies {
+                        implementation group: 'co.com.devco.automation', name: 'automationDevcoLibrary', version: '2.0.2'
+                    }
+                  </code>
+              </pre>
+              
+              <p>
+                Si estas usando Maven puedes importarla asi:
+              </p>
+
+              <pre>
+                <code class="xml">
+                  &lt;dependency&gt;
+                    &lt;groupId&gt;co.com.devco.automation &lt;/groupId&gt;
+                    &lt;artifactId&gt;automationDevcoLibrary &lt;/artifactId&gt;
+                    &lt;version&gt;2.0.2 &lt;/version&gt;
+                  &lt;/dependency&gt;
+                </code>
+            </pre>
+
+          </section>
+
+          <hr class="divider">
+
+          <!-- Locator Strategy
+		============================ -->
+          <section id="locator_strategy_section">
+            <h2>Estrategia para Locators en Móviles</h2>
+            <h4>Locator Strategy</h4>
+            <p>Esta utilidad te permite manejar una automatización móvil multiplataforma (Android e iOS) utilizando el mismo script.
+              La ventaja de utilizar esta estrategia de locators es que puede utilizar locators estáticos y dinámicos fácilmente.
+            </p>
+
+            <h3>Métodos disponibles para la estrategía Locators en Móviles</h3>
+
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col">Android</th>
+                  <th scope="col">iOS</th>
+                  <th scope="col">Tipo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>withAndroidXpathDynamic()</td>
+                  <td>withIosXpathDynamic()</td>
+                  <td>Estrategia Dinámica</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>withAndroidXpathStatic()</td>
+                  <td>withIosXpathStatic()</td>
+                  <td>Estrategia Estática</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>withAndroidId()</td>
+                  <td>withIosId()</td>
+                  <td>Estrategia Estática</td>
+                </tr>
+                <tr>
+                  <th scope="row">4</th>
+                  <td>withAndroidName()</td>
+                  <td>withIosName()</td>
+                  <td>Estrategia Estática</td>
+                </tr>
+                <tr>
+                  <th scope="row">5</th>
+                  <td>withAndroidClassName()</td>
+                  <td>withIosClassName()</td>
+                  <td>Estrategia Estática</td>
+                </tr>
+                <tr>
+                  <th scope="row">6</th>
+                  <td>withAndroidAccesibilityId()</td>
+                  <td>withIosAccesibilityId()</td>
+                  <td>Estrategia Estática</td>
+                </tr>
+                <tr>
+                  <th scope="row">7</th>
+                  <td></td>
+                  <td>withIosClassChain()</td>
+                  <td>Estrategia Estática</td>
+                </tr>
+                <tr>
+                  <th scope="row">8</th>
+                  <td></td>
+                  <td>withIosPredicatedString()</td>
+                  <td>Estrategia Estática</td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <P>Antes de comenzar con cualquier estrategia, lo primero que debe hacer es crear 2 carpetas en su capa de User Interface. Carpeta Page y Locator</p>
+
+            <div class="row">
+              <div class="col-lg-6">
+            <p><a class="popup-img" href="assets/images/locators/capas.png"><img class="img-fluid border" src="assets/images/locators/capas.png" alt=""></a></p>
+          </div>
+        </div>
+
+        <h3>Estrategia para Locators Dinámicos</h3>
+
+        <p>En su carpeta de Locators, creará una clase y uno por uno los objetos tipo Locators que necesita.
+          Utilice la palabra Locator en el nombre de la clase como recomendación para diferenciarla más adelante.</p>
+
+
+            <pre><code class="java">
+              public class LoginLocator {
+                  public static final Locator TXT_USERNAME_LOCATOR =
+                          locator()
+                                  .withAndroidXpathDynamic("//android.widget.EditText[contains(@resource-id, '{0}')]")
+                                  .withIosXpathDynamic("(//XCUIElementTypeStaticText[@name='{0}'])[1]");
+              }
+</code></pre>
+          
+
+          <p>Cree en la carpeta <b>Page</b> una clase con el mismo nombre que creó La clase Locator, pero en este caso, debe tener la palabra "Page" en el nombre para diferenciarla. 
+            En esta clase crearás tus objetos de tipo Target enviando el Locator como parámetro. <b>Importante</b>, 
+            los métodos para llamar al Locator dinámico son <b> locatedBy </b> y se envían como parámetro <b> dynamicElement() </b> Asi:</p>
+
+            <pre><code class="java">
+              public class LoginPage {
+                  public static final Target TXT_USERNAME =
+                      Target.the("Input to username").locatedBy(dynamicElement(TXT_USERNAME_LOCATOR));
+                }
+</code></pre>
+
+<p>Ahora su automatización está fucnionando con Locators dinámicos usando xpath con el parámetro {0} .... {n}. Cuando invoques al Target en una clase Interaction o Task
+  solo necesita usar el método of() en el Target, enviar el parámetro y que la librería hará el resto.
+</p>
+
+<h3>Estrategia para Locators Estáticos</h3>
+
+<p>Para locators estáticos es la misma configuración anterior en la clase Locators</p>
+
+<pre><code class="java">
+  public class LoginLocator {
+    public static final Locator TXT_USERNAME_LOCATOR =
+           locator()
+                   .withAndroidId("textInput_name")
+                   .withIosPredicatedString("label == 'userName'");
+}
+</code></pre>
+
+<p>Algo muy importante es, en tu clase Page el método que debes llamar es <b>located()</b> y el parámetro que este método recibe es otro método llamado
+<b>theElementBy()</b> y este recibe el objeto Locator creado</p>
+
+<pre><code class="java">
+  public class LoginPage {
+      public static final Target TXT_USERNAME =
+          Target.the("Input to username").located(theElementBy(TXT_USERNAME_LOCATOR));
+    }
+</code></pre>
+
+<h3>A tener en cuenta:</h3>
+<ul>
+  <li>En tu Clase Locator, define todos los elementos que pertenecen a la vista que vas a automatizar. No es una clase por locator.</li>
+  <li>No puedes definir un Locator con una estrategia estática en un SO y dinámica en otro porque la lógica de tu Interaction o tu Task cambia y fallará al ejecutar.</li>
+  <li>Para las estrategias estáticas, cuando crea los objetos de los locators, el método mostrará todas las estrategias que puede usar para un elemento en Android e iOS.</li>
+</ul>
+
+          </section>
+          <hr class="divider">
+
+
+          <!-- Mobile
+		============================ -->
+          <section id="mobile_section">
+            <h2>Móviles</h2>
+            <p class="lead mb-5">En esta sección, encontrará Acciones y Habilidades disponibles para Android e iOS. Puede usar estas acciones en tu automatización de Serenity BDD usando el patrón Screenplay.</p>
+          </section>
+
+          <hr class="divider">
+
+          <!-- Actions
+		============================ -->
+          <section id="actions_section">
+            <h2>Acciones</h2>
+            <p class="lead mb-5">Por definición general, las acciones realizan toda la interacción directa con la API de Selenium y nos permiten elegir un título más legible para lo que estamos haciendo. Un claro ejemplo de esto es Click.on(), por lo que las acciones que vas a ver aquí están enfocadas a interacciones específicas con los elementos o pantalla para móvil.</p>
+          </section>
+
+          <hr class="divider">
+
+
+          <!-- Actions Drag
+		============================ -->
+          <section id="drag_element_section">
+            <h2>Arrastrar Elemento</h2>
+            <h4>Drag Element</h4>
+            <p>Arrastrar elemento (Drag Element) es una interacción en la que puede arrastrar "literalmente" elementos específicos en la pantalla de diferentes formas. Esta interacción es útil para deslizar objetos para eliminarlo o ver más opciones, etc.
+            </p>
+
+            <H3>¿Cómo usarlo?</H3>
+
+            <pre><code class="java">
+              Drag.theElement(Target.the()).to(UP)
+              Drag.theElement(Target.the()).to(DOWN)
+              Drag.theElement(Target.the()).to(LEFT)
+              Drag.theElement(Target.the()).to(RIGHT)
+            </code></pre>
+          </section>
+
+
+          <!-- Actions Scroll
+		============================ -->
+          <section id="scroll_section">
+            <h2>Scroll</h2>
+            <h4>Scroll</h4>
+            <p>Scroll es una excelente interacción que te ayuda a moverse sobre la pantalla hasta encontrar los elementos que necesites y están en la parte inferior o incluso en la parte superior. Sí, funciona en ambos sentidos, además puedes enviar como parámetro la cantidad máxima de intentos que vas a hacer para encontrar el elemento, en caso de que no lo encuentres continúa con tu prueba según corresponda.</p>
+          </section>
+
+          <H3>¿Cómo usarlo?</H3>
+
+          <p>Para realizar un scroll hacia abajo, usa:</p>
+
+          <pre><code class="java">
+            Scroll.untilVisibleTarget(Target).toBottom().untilMaxAttempts(Integer)
+          </code></pre>
+        </section>
+
+        <p>Para realizar un scroll hacia arriba, usa:</p>
+
+        <pre><code class="java">
+          Scroll.untilVisibleTarget(Target).toTop().untilMaxAttempts(Integer)
+        </code></pre>
+      </section>
+
+          <hr class="divider">
+
+          <!-- abilities mobile section
+		============================ -->
+          <section id="abilities_mobile_section">
+            <h2>Habilidades</h2>
+            <p class="lead">La habilidad es la capacidad que tiene un actor de ejecutar acciones para realizar las tareas asignadas. La habilidad es diferente de una Interacción ya que esta es más técnica, manejar configuraciones en el dispositivo, trabajar con el contexto, etc. </p>
+           
+          </section>
+
+          <hr class="divider">
+
+
+          <!-- Abilities Change Driver Context
+		============================ -->
+          <section id="change_driver_section">
+            <h2>Cambiar Contexto del Driver</h2>
+            <h4>Change Driver Context</h4>
+            <p>When you are working with a web app or hybrid app, sometimes you need to change the context because the elements change and the way how you interact too, so if this is your case you need to switch between the Web and native views to WEBVIEW or NATIVE context.</p>
+
+            <H3>¿Cómo usarlo?</H3>
+
+            <p>Usa la siguiente habilidad para cambiar a un contexto de tipo webview:</p>
+
+            <pre><code class="java">
+              ChangeDriverContext.toWebview()
+            </code></pre>
+
+            <p>Usa la siguiente habilidad para cambiar a un contexto de tipo nativo:</p>
+
+            <pre><code class="java">
+              ChangeDriverContext.toNative()
+            </code></pre>
+
+          </section>
+
+          <hr class="divider">
+
+          <!-- Abilities Choose App
+		============================ -->
+          <section id="choose_app_section">
+            <h2>Elegir una App desde Segundo Plano</h2>
+            <h4>Choose App from Background</h4>
+            <p>Esta habilidad permite elegir una aplicación que se está ejecutando en segundo plano y poder utilizarla. Solo necesitas enviar el nombre de la aplicación que se está ejecutando en segundo plano y listo. Importante si la aplicación no está abierta, la habilidad no funcionará.</p>
+           
+            <H3>¿Cómo usarlo?</H3>
+           
+            <pre><code class="java">
+              ChooseApp.fromBackground("App Name")
+            </code></pre>
+          </section>
+
+          <hr class="divider">
+
+          <!-- Abilities Run App in Background
+		============================ -->
+          <section id="run_app_section">
+            <h2>Ejecutar la aplicación en Segundo Plano</h2>
+            <h4>Run App in Background</h4>
+            <p>Esta habilidad ejecuta la aplicación actual en segundo plano durante un breve período de tiempo y luego vuelve a la aplicación como aplicación principal. Eso ayuda a simular una actualización, un comportamiento específico de su escenario de prueba, o ayuda a que algunos elementos aparezcan en el XML para interactuar con ellos.</p>
+           
+            <H3>¿Cómo usarlo?</H3>
+           
+            <pre><code class="java">
+              RunAppInBackground.modeForASecond()
+            </code></pre>
+          </section>
+
+          <hr class="divider">
+
+          <!-- Abilities Hide Keyboard
+		============================ -->
+          <section id="hide_key_section">
+            <h2>Ocultar teclado</h2>
+            <h4>Hide Keyboard</h4>
+            <p>A veces, el teclado oculta algunos elementos con los que necesita interactuar. Esta sencilla habilidad ayuda a ocultar el teclado para ver todos los elementos de la vista.<br>
+              <b>Es solamente para Android.</b></p>
+
+              <H3>¿Cómo usarlo?</H3>
+           
+              <pre><code class="java">
+                Hide.theKeyboard()
+              </code></pre>
+            </section>
+
+          <hr class="divider">
+
+
+          <!-- Web section
+		============================ -->
+          <section id="web_section">
+            <h2>Web</h2>
+            <p class="lead mb-5">En esta sección, encontrará Acciones y Habilidades disponibles para las páginas web. Estan enfocadas para el uso con Serenity BDD y el patrón Screenplay.</p>
+          </section>
+
+          <hr class="divider">
+          <!-- abilities web section
+		============================ -->
+          <section id="abilities_web_section">
+            <h2>Habilidades</h2>
+            <p class="lead">La habilidad es la capacidad que tiene un actor de ejecutar acciones para realizar las tareas asignadas. </p>
+           
+          </section>
+
+          <hr class="divider">
+
+          <!-- Abilities change tab web
+		============================ -->
+          <section id="change_tab_section">
+            <h2>Cambiar de Pestaña</h2>
+            <h4>Change Tab</h4>
+            <p>Algunas páginas web abren nuevas pestañas cuando una interacción hace algo con un elemento. Si su automatización necesita continuar la prueba con la nueva pestaña, debe hacer el cambio, pero el driver se mantiene enfocado en la página actual. Esta habilidad ayuda a cambiar fácilmente entre pestañas.</p>
+            <H3>¿Cómo usarlo?</H3>
+           
+              <pre><code class="java">
+                ChangeToTab.withIndex(Integer)
+              </code></pre>
+          </section>
+
+          <hr class="divider">
+
+
+          <!-- Abilities Open new tab web
+		============================ -->
+          <section id="open_new_tab_section">
+            <h2>Abrir Nueva Pestaña</h2>
+            <h4>Open New Tabs</h4>
+            <p>Esta habilidad te permite abrir una nueva pestaña si lo requieres dentro de tu prueba.</p>
+            <H3>¿Cómo usarlo?</H3>
+           
+              <pre><code class="java">
+                OpenNewTab.onBrowser()
+              </code></pre>
+          </section>
+
+          <hr class="divider">
+
+          <!-- Wait Section
+		============================ -->
+    <section id="wait_section">
+      <h2>Esperas</h2>
+      <p class="lead mb-5">En esta sección vas a encontrar un Wait explicito específico.</p>
+    </section>
+
+    <hr class="divider">
+
+          <!-- StandBy Section Wait
+		============================ -->
+          <section id="stand_by_section">
+            <h2>Tiempo de Espera</h2>
+            <h4>Stand By</h4>
+            <p>Esta espera explícita es útil para esperar un elemento sobre le cual tenemos que indicar el tiempo de espera usando la visibilidad como condición para continuar.</p>
+            <H3>¿Cómo usarlo?</H3>
+           
+              <pre><code class="java">
+                StandBy.visibilityOf(Target).forNoMoreThan(Integer).seconds
+              </code></pre>
+          </section>
+
+          <hr class="divider">
+
+          <!-- Utilities
+		============================ -->
+          <section id="utilities_section">
+            <h2>Utilidades</h2>
+            <p class="lead mb-5">En esta sección, encontrará algunas utilidades para manejar archivos externos. Estas utilidades no están construidas bajo el patrón Screenplay, sin embargo es útil para tu automatización.</p>
+          </section>
+      
+          <hr class="divider">
+
+          <!-- Read CSV section
+		============================ -->
+          <section id="read_csv_section">
+            <h2>Leer Datos desde un CSV</h2>
+            <h4>Read Data from CSV</h4>
+            <p>En un script de automatización, podemos administrar los datos con múltiples estrategias, que incluyen archivos externos como .xlsx o .csv. Esta utilidad lee un archivo CSV y extrae los datos que necesita utilizando el nombre de una columna como filtro.</p>
+         <br>
+         <p>Como recomendación, tu archivo debe ser llamado con la palabra <b>data_</b> como prefijo y luego el complemento, por ejemplo, <b>data_login.csv</b> y el archivo debe estar localizado en una carpeta "data" en la capa de recursos en test.</p>
+
+          <H3>¿Cómo usarlo?</H3>
+           
+          <pre><code class="java">
+            DataCSV.getDataCsv(fileName, filter)
+          </code></pre>
+        </section>
+
+          <hr class="divider">
+
+
+          <!-- Read PDF Section
+		============================ -->
+          <section id="read_pdf_section">
+             <h2>Administrador de PDF</h2>
+             <h4>PDF Manager</h4>
+            <p>Esta es una utilidad para leer un archivo PDF desde una URL en el navegador o una ruta específica en su computadora, además, captura el contenido del archivo con el fin de que pueda manipular la información.</p>
+          <H3>¿Cómo usarlo?</H3>
+        
+          <H5> Leer un PDF desde el navegador enviando la URL como parámetro</H5>
+          <pre><code class="java">
+            ReadPdf.readPdfFromBrowser()
+          </code></pre>
+
+          <H5>Leer un PDF desde el sistema enviando la ruta como parámetro</H5>
+          <pre><code class="java">
+            ReadPdf.readPdfFromFile()
+          </code></pre>
+
+          <H5>Obtener la información de un PDF</H5>
+          <pre><code class="java">
+            ReadPdf.getPdfLines()
+          </code></pre>
+        </section>
+        
+        <hr class="divider">
+
+          <!-- Changelog
+		============================ -->
+
+          <section id="changelog_section">
+            <h2>Registro de Cambios</h2>
+            <p class="text-4">Aqui puedes ver que ha sido agregado, modificado, arreglado o eliminado en nuestras ultimas versiones. </p>
+            <p class="alert alert-info mb-5"> Para enterarte de futuras actualizaciones, siguenos <a target="_blank"
+                href="https://www.linkedin.com/company/somosdevco/mycompany/">@LinkedIn</a> / <a target="_blank"
+                href="https://www.facebook.com/SomosDevco">@Facebook</a> / <a target="_blank"
+                href="https://www.instagram.com/somosdevco/">@Instagram</a> / <a target="_blank"
+                href="https://github.com/devcognitio">@Github</a> <br>
+                Visit us <br>
+                <a target="_blank"
+                href="https://www.devco.com.co/">www.devco.com.com</a><br>
+                <a target="_blank"
+                href="https://mvnrepository.com/artifact/co.com.devco.automation/automationDevcoLibrary">Maven Repository - Automation Devco Library</a>
+              </p>
+              <p class="text-4">los cambios son tomados del repositorio, por lo que vas a encontrarlos en Ingles.</p>
+              <hr class="divider">
+
+            <h3 id="v2-0-2">Version 2.0.2 <small class="text-muted">(30 July, 2020)</small></h3>
+            <ul class="changelog">
+            <li><span class="badge badge-info">Updated</span> Fixed Scrolling issue changing toTop dimension calculation</li>
+          </ul>
+
+          <hr class="divider">
+
+            <h3 id="v2-0-1">Version 2.0.1 <small class="text-muted">(28 July, 2020)</small></h3>
+            <ul class="changelog">
+            <li><span class="badge badge-info">Updated</span> Interaction Drag.theElement(TARGET).to(DragDirection.UP) to perform dragging on elements to UP, DOWN, LEFT, RIGHT</li>
+          </ul>
+
+          <hr class="divider">
+
+            <h3 id="v2-0-0">Version 2.0.0 <small class="text-muted">(26 July, 2020)</small></h3>
+            <ul class="changelog">
+            <li><span class="badge badge-success">Added</span> Choose App from Background</li>
+            <li><span class="badge badge-success">Added</span> Change Driver Contexto to WEEBVIEW or NATIVE</li>
+            <li><span class="badge badge-info">Updated</span> Waits change for StandBy</li>
+            <li><span class="badge badge-info">Updated</span> Scroll until visible Target now to bottom or to top</li>
+            <li><span class="badge badge-info">Updated</span> Issue solve in Hide Keyboard</li>
+            <li><span class="badge badge-danger">Removed</span> WaitFor is now deprecated. Will be delete soon</li>
+            <li><span class="badge badge-danger">Removed</span> Scroll until Target position was deleted</li>
+          </ul>
+
+          <hr class="divider">
+
+            <h3 id="v1-3-9">Version 1.3.9 <small class="text-muted">(06 July, 2020)</small></h3>
+            <ul class="changelog">
+            <li><span class="badge badge-success">Added</span> Automatic Release in Nexus SonaType</li>
+            <li><span class="badge badge-info">Updated</span> Gradle version changed to 7.1</li>
+            <li><span class="badge badge-info">Updated</span> Workflow tool change to GitHub Actions from CircleCI</li>
+          </ul>
+
+          <hr class="divider">
+
+            <h3 id="v1-3-8">Version 1.3.8 <small class="text-muted">(28 June, 2020)</small></h3>
+            <ul class="changelog">
+            <li><span class="badge badge-success">Added</span> Interaction Drag.theElement(TARGET).to(DragDirection.UP) to perform dragging on elements to UP, DOWN, LEFT, RIGHT</li>
+          </ul>
+
+          <hr class="divider">
+
+            <h3 id="v1-3-7">Version 1.3.7 <small class="text-muted">(08 June, 2020)</small></h3>
+            <ul class="changelog">
+            <li><span class="badge badge-success">Added</span> Adding a method to Locator class. Now you can located objects in Android mobile automation using Accessibility ID</li>
+          </ul>
+
+          <hr class="divider">
+
+            <h3 id="v1-3-6">Version 1.3.6 <small class="text-muted">(06 June, 2020)</small></h3>
+            <ul class="changelog">
+            <li><span class="badge badge-success">Added</span> Three new methods to Locator class. Now you can located objects in iOS mobile automation using class chain, predicated string and accesibility id as strategy</li>
+          </ul>
+
+          <hr class="divider">
+
+            <h3 id="v1-3-5">Version 1.3.5 <small class="text-muted">(01 June, 2020)</small></h3>
+            <ul class="changelog">
+            <li><span class="badge badge-success">Added</span> Read PDF from url: When the browser opens the new tab that contains a PDF, the method can read the text and return a String</li>
+            <li><span class="badge badge-success">Added</span> Read PDF from file</li>
+            <li><span class="badge badge-success">Added</span> Change String for Array: When you have a String has generated from PDF, this method takes the separator of line, and create an array</li>
+          </ul>
+
+          <hr class="divider">
+
+            <h3 id="v1-3-4">Version 1.3.4 <small class="text-muted">(15 May, 2020)</small></h3>
+            <ul class="changelog">
+            <li><span class="badge badge-success">Added</span> OpenNewTab: Opens a new tab on webpage</li>
+            <li><span class="badge badge-success">Added</span> ChangeToTab: Change actual tab on webpage by tab index position</li>
+            <li><span class="badge badge-info">Updated</span> Hide:renamed HideKeyBoard interaction to Hide and added platfomrs validation</li>
+          </ul>
+        
+          <hr class="divider">
+
+            <h3 id="v1-3-2">Version 1.3.2 <small class="text-muted">(05 May, 2020)</small></h3>
+            <ul class="changelog">
+            <li><span class="badge badge-info">Updated</span> HotFix - iOS platform name: Change to the correct way to use it. Now it works correctly sending the platform name as you prefer. issue solved.</li>
+          </ul>
+
+          <hr class="divider">
+
+            <h3 id="v1-3-1">Version 1.3.1 <small class="text-muted">(04 September, 2019)</small></h3>
+            <ul class="changelog">
+            <li><span class="badge badge-success">Added</span> HideKeyBoard : interaction to hide displayed keyboard on screen</li>
+            <li><span class="badge badge-success">Added</span> RunAppInBackground: interaction to run app in background mode for a second and return it to first plane</li>
+            <li><span class="badge badge-success">Added</span> WaitFor: interaction to explicit wait in minutes, seconds and milliseconds params: int time</li>
+            <li><span class="badge badge-success">Added</span> WaitForElement: interaction to wait for the visibility of the elements for a while, if the element does not appear automation continues its course</li>
+          </ul>
+
+          <hr class="divider">
+
+            <h3 id="v1-3-0">Version 1.3.0 <small class="text-muted">(03 September, 2019)</small></h3>
+            <ul class="changelog">
+            <li><span class="badge badge-success">Added</span> Add a Interaction to do Scroll (until target position or target visible) in native apps for Android</li>
+          </ul>
+
+          <hr class="divider">
+
+            <h3 id="v1-2-0">Version 1.2.0 <small class="text-muted">(30 August, 2019)</small></h3>
+            <ul class="changelog">
+            <li><span class="badge badge-success">Added</span> Add class to lecture from CSV file to use like external data</li>
+          </ul>
+
+          <hr class="divider">
+
+            <h3 id="v1-1-0">Version 1.1.0 <small class="text-muted">(13 August, 2019)</small></h3>
+            <ul class="changelog">
+              <li><span class="badge badge-success">Added</span> Unit test coverage up</li>
+              <li><span class="badge badge-success">Added</span> Add methods for searching locators using MobileBy</li>
+              <li><span class="badge badge-info">Updated</span> Solve some code smell in the code</li>
+              <li><span class="badge badge-info">Updated</span> Changes in locators using best practices</li>
+              <li><span class="badge badge-info">Updated</span> Rename LocatorBuilder to Locator</li>
+              <li><span class="badge badge-info">Updated</span> Pipeline improvements</li>
+            </ul>
+
+            <hr class="divider">
+
+            <h3 id="v1-0-0">Version 1.0.0 <small class="text-muted">(23 July, 2019)</small></h3>
+            <ul class="changelog">
+            <p>Initial Release</p>
+            <li><span class="badge badge-success">Added</span> Mobile locators for execution on multiple devices depending of the capabilities</li>
+          </ul>
+          </section>
+          <hr class="divider">
+
+     <!-- Overview -->
+     <section id="contributors_section">
+      <h1>Automation Devco Library Documentation</h1>
+      <h2>9. Colaboradores</h2>
+      <p class="lead">Muchas gracias por leer y usar nuestra librería.</p>
+      <hr>
+      
+      <ul class="list-unstyled">
+        <h3>Autor</h3>
+        <ul class="list-unstyled">
+        <li>Juan de Jesús Fernández Graciano</li>
+        <li><a data-toggle="tooltip" href="https://www.linkedin.com/in/ingjuanfg/" target="_blank"
+          title="" data-original-title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a data-toggle="tooltip" href="https://github.com/ingjuanfg" target="_blank" title=""
+          data-original-title="GitHub"><i class="fab fa-github"></i></a>
+        </li>
+          </ul>
+        </ul>
+        <h3>Colaboradores</h3>
+        <ul class="list-unstyled">
+        <li>Sebastian Orozco Peña</li>
+        <li><a data-toggle="tooltip" href="https://www.linkedin.com/in/seorozcope/" target="_blank"
+          title="" data-original-title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a data-toggle="tooltip" href="https://github.com/sorozcop" target="_blank" title=""
+          data-original-title="GitHub"><i class="fab fa-github"></i></a>
+        </li>
+
+        <li>Jennifer Pérez Bedoya</li>
+        <li><a data-toggle="tooltip" href="https://www.linkedin.com/in/jenniferperezb/" target="_blank"
+          title="" data-original-title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a data-toggle="tooltip" href="https://github.com/JenniferPerezBedoya" target="_blank" title=""
+          data-original-title="GitHub"><i class="fab fa-github"></i></a>
+        </li>
+
+        <li>Carlos Eduardo Acevedo Duque</li>
+        <li><a data-toggle="tooltip" href="https://www.linkedin.com/in/carlos-eduardo-acevedo-duque-6b6a52126/" target="_blank"
+          title="" data-original-title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a data-toggle="tooltip" href="https://github.com/cacevedod" target="_blank" title=""
+          data-original-title="GitHub"><i class="fab fa-github"></i></a>
+        </li>
+
+        <li>Susana Campo Contreras</li>
+        <li><a data-toggle="tooltip" href="https://www.linkedin.com/in/susana-campo-contreras-" target="_blank"
+          title="" data-original-title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a data-toggle="tooltip" href="https://github.com/" target="_blank" title=""
+          data-original-title="GitHub"><i class="fab fa-github"></i></a>
+        </li>
+
+        <li>Daniel Torres Bedoya</li>
+        <li><a data-toggle="tooltip" href="https://www.linkedin.com/in/daniel-torres-bedoya-625173120/" target="_blank"
+          title="" data-original-title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a data-toggle="tooltip" href="https://github.com/danietb95" target="_blank" title=""
+          data-original-title="GitHub"><i class="fab fa-github"></i></a>
+        </li>
+
+        <li>Licet Estrada </li>
+        <li><a data-toggle="tooltip" href="https://www.linkedin.com/in/licet-estrada-329708117/" target="_blank"
+          title="" data-original-title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a data-toggle="tooltip" href="https://github.com/Nitabo88" target="_blank" title=""
+          data-original-title="GitHub"><i class="fab fa-github"></i></a>
+        </li>
+      </ul>
+    </section>
+
+    <hr class="divider">
+
+        </div>
+      </div>
+
+    </div>
+    <!-- Content end -->
+
+
+
+
+    <!-- Footer
+  ============================ -->
+    <footer id="footer" class="section bg-dark footer-text-light">
+      <div class="container">
+        <ul class="social-icons social-icons-lg social-icons-muted justify-content-center mb-3">
+          <li><a data-toggle="tooltip" href="https://www.devco.com.co/" target="_blank" title=""
+              data-original-title="Web Page"><i class="fab fa-dribbble"></i></a></li>
+          <li><a data-toggle="tooltip" href="https://www.linkedin.com/company/somosdevco/mycompany/" target="_blank"
+              title="" data-original-title="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+          <li><a data-toggle="tooltip" href="https://github.com/devcognitio" target="_blank" title=""
+              data-original-title="GitHub"><i class="fab fa-github"></i></a></li>
+          <li><a data-toggle="tooltip" href="https://www.instagram.com/somosdevco/" target="_blank" title=""
+              data-original-title="Instagram"><i class="fab fa-instagram"></i></a></li>
+          <li><a data-toggle="tooltip" href="https://www.facebook.com/SomosDevco" target="_blank" title=""
+              data-original-title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+        </ul>
+        <p class="text-center">Copyright &copy; 2019-2021 <a href="https://www.devco.com.co/">Devco</a>.Todos los derechos reservados.
+        </p>
+
+        <p class="text-center">La librería de Automatización de Devco es un proyecto de  código abierto creado y mantenido por  
+         Devco, bajo la licencia y términos de APache 2.0.
+        </p>
+
+      </div>
+    </footer>
+    <!-- Footer end -->
+
+  </div>
+  <!-- Document Wrapper end -->
+
+  <!-- Back To Top -->
+  <a id="back-to-top" data-toggle="tooltip" title="Back to Top" href="javascript:void(0)"><i
+      class="fa fa-chevron-up"></i></a>
+
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/highlight.js/highlight.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+  <script src="assets/js/theme.js"></script>
+</body>
+
+</html>
